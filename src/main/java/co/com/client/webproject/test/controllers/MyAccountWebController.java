@@ -1,5 +1,6 @@
 package co.com.client.webproject.test.controllers;
 
+import co.com.client.webproject.test.page.DressesPage;
 import co.com.client.webproject.test.page.MyAccountPage;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
@@ -12,9 +13,9 @@ public class MyAccountWebController {
         this.webAction = webAction;
     }
 
-    public String obtenerNombreDeNuevoUsuario(){
+    public String obtenerNombreDeNuevoUsuario() {
         String usuario = "";
-        try{
+        try {
             MyAccountPage myAccountPage = new MyAccountPage(webAction.getDriver());
 
             usuario = webAction.getText(myAccountPage.getCustomerName(), 2, true);
@@ -24,5 +25,15 @@ public class MyAccountWebController {
         }
 
         return usuario;
+    }
+
+    public void irAComprarVestidos() {
+
+        try {
+            DressesPage dressesPage = new DressesPage(webAction.getDriver());
+            webAction.click(dressesPage.getLinkDresses(),10,true);
+        } catch (WebActionsException e) {
+            Report.reportFailure("Ocurrio un error al ingresar a la pagina de vestidos "+e);
+        }
     }
 }

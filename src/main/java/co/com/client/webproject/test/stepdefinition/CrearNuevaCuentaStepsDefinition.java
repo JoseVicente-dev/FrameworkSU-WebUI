@@ -6,6 +6,7 @@ import co.com.client.webproject.test.controllers.MyAccountWebController;
 import co.com.client.webproject.test.controllers.openwebpage.StartBrowserWebController;
 import co.com.client.webproject.test.data.objects.TestInfo;
 import co.com.client.webproject.test.model.Customer;
+import co.com.client.webproject.test.page.DressesPage;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
 import co.com.sofka.test.evidence.reports.Report;
@@ -35,7 +36,7 @@ public class CrearNuevaCuentaStepsDefinition extends Setup{
         StartBrowserWebController startBrowserWebController = new StartBrowserWebController();
         startBrowserWebController.setWebAction(webAction);
         startBrowserWebController.setBrowser(browser());
-        startBrowserWebController.setFeatue(testInfo.getFeatureName());
+        startBrowserWebController.setFeature(testInfo.getFeatureName());
         startBrowserWebController.abrirTiendaOnline();
     }
 
@@ -49,6 +50,7 @@ public class CrearNuevaCuentaStepsDefinition extends Setup{
         createAnAccountWebController.setWebAction(webAction);
         createAnAccountWebController.crearUnaCuenta();
         customer = createAnAccountWebController.getCustomer();
+
     }
 
     @Entonces("como resultado el usuario quedará logueado dentro de su respectiva sesión per se.")

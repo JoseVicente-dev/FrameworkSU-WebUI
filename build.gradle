@@ -33,8 +33,6 @@ repositories {
         credentials {
             username = System.getenv("MAVEN_USER")
             password = System.getenv("MAVEN_PASSWORD")
-/*            username = "sofkaQA"
-            password = "ReaderQA2021"*/
         }
     }
 }

@@ -13,12 +13,12 @@ public class Setup {
         browserConfiguration.setIncognito(true);
         browserConfiguration.setAutoDriverDownload(true);
         //browserConfiguration.setDriverVersion("95.0.4638.54");
-        browserConfiguration.setChromeOptions(chomeOptions());
+        browserConfiguration.setChromeOptions(chromeOptions());
 
         return browserConfiguration;
     }
 
-    private ChromeOptions chomeOptions(){
+    private ChromeOptions chromeOptions(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
         return options;
