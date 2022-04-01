@@ -1,5 +1,6 @@
 package co.com.client.webproject.test.controllers;
 
+import co.com.client.webproject.test.helpers.Seconds;
 import co.com.client.webproject.test.page.DressesPage;
 import co.com.client.webproject.test.page.MyAccountPage;
 import co.com.sofka.test.actions.WebAction;
@@ -18,7 +19,7 @@ public class MyAccountWebController {
         try {
             MyAccountPage myAccountPage = new MyAccountPage(webAction.getDriver());
 
-            usuario = webAction.getText(myAccountPage.getCustomerName(), 2, true);
+            usuario = webAction.getText(myAccountPage.getCustomerName(), Seconds.TWO_SECONDS.getValue(), true);
 
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al intentar validar la creación de un cuenta.", e);
@@ -31,7 +32,7 @@ public class MyAccountWebController {
 
         try {
             DressesPage dressesPage = new DressesPage(webAction.getDriver());
-            webAction.click(dressesPage.getLinkDresses(),10,true);
+            webAction.click(dressesPage.getLinkDresses(),Seconds.TEN_SECONDS.getValue(), true);
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al ingresar a la pagina de vestidos "+e);
         }

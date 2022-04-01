@@ -19,7 +19,6 @@ import io.cucumber.java.es.Entonces;
 public class AdicionarUnProductoStepsDefinition extends Setup{
 
     private WebAction webAction;
-
     DressesPageController dressesPageController;
 
     @Before
@@ -63,7 +62,7 @@ public class AdicionarUnProductoStepsDefinition extends Setup{
     @Entonces("se mostrará el mensaje {string}")
     public void elContadorDeProductosAumentaráEn(String mensajeDeConfirmacion) {
 
-        String mensaje = dressesPageController.obtenerContadorDelCarrito();
+        String mensaje = dressesPageController.obtenerMensajeDeConfirmacion();
 
         Assert
                 .Hard

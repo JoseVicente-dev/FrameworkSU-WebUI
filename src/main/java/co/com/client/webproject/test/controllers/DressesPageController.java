@@ -1,6 +1,7 @@
 package co.com.client.webproject.test.controllers;
 
 import co.com.client.webproject.test.helpers.Dictionary;
+import co.com.client.webproject.test.helpers.Seconds;
 import co.com.client.webproject.test.page.DressesPage;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
@@ -28,16 +29,28 @@ public class DressesPageController {
         }
     }
 
+    public void procederAlCheckout(){
+
+        try {
+            DressesPage dressesPage = new DressesPage(webAction.getDriver());
+            webAction.click(dressesPage.getProceedToCheckoutBtn(), Seconds.THIRTY_SECONDS.getValue(),true);
+        } catch (WebActionsException e) {
+
+            Report.reportFailure("Ocurrio un error al intentar ir al checkout"+e);
+        }
+
+    }
+
     //For asserts
-    public String obtenerContadorDelCarrito(){
+    public String obtenerMensajeDeConfirmacion(){
         String mensaje= Dictionary.EMPTY_STRING;
         try {
             DressesPage dressesPage = new DressesPage((webAction.getDriver()));
-            mensaje = webAction.getText(dressesPage.getAddedProductMessage(),60,true).trim();
+            mensaje = webAction.getText(dressesPage.getAddedProductMessage(),Seconds.THIRTY_SECONDS.getValue(),true).trim();
 
         }catch (WebActionsException e){
 
-            Report.reportFailure("Ocurrio un error intentando validar el mensaje de confirmacion "+e);
+            Report.reportFailure("Ocurrio un error intentando validar el mensaje de adicion del producto "+e);
         }
 
         return mensaje;

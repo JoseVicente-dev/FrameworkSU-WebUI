@@ -9,7 +9,7 @@ public class Dictionary {
     public static final String SPANISH_CODE_LANGUAGE = "es";
     public static final String COUNTRY_CODE = "CO";
 
-    public static final String EMAIL_DOMAIN = "@sofmail.com";
+    public static final String EMAIL_DOMAIN = "@sofkamail.com";
 
     public static final String FILE_EVIDENCE_PROPERTY = "files.evidence";
     public static final String APP_URL_PROPERTY = "app.url";

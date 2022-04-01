@@ -1,5 +1,6 @@
 package co.com.client.webproject.test.controllers;
 
+import co.com.client.webproject.test.helpers.Seconds;
 import co.com.client.webproject.test.page.LandingPage;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Report;
@@ -16,7 +17,7 @@ public class LoginPageController {
         try{
             LandingPage landingPage = new LandingPage(webAction.getDriver());
 
-            webAction.click(landingPage.getSignIn(), 2,true);
+            webAction.click(landingPage.getSignIn(), Seconds.TWO_SECONDS.getValue(), true);
 
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al intentar abrir la tienda online", e);

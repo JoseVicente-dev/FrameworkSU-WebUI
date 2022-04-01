@@ -20,7 +20,11 @@ public class DressesPage {
     @CacheLookup
     WebElement addToChartBtn;
 
+    @FindBy(xpath = "/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")
+    @CacheLookup
+    WebElement proceedToCheckoutBtn;
 
+    //TODO: crear funcion para localizador dinámico de mensajes
     @FindBy(xpath = "//*[contains(text(),'There is 1 item in your cart.')]")
     @CacheLookup
     WebElement addedProductMessage;
@@ -39,6 +43,10 @@ public class DressesPage {
 
     public WebElement getProductLabelText() {
         return productLabelText;
+    }
+
+    public WebElement getProceedToCheckoutBtn() {
+        return proceedToCheckoutBtn;
     }
 
     public DressesPage(WebDriver webDriver){

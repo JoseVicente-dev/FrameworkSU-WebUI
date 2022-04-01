@@ -1,5 +1,6 @@
 package co.com.client.webproject.test.controllers;
 
+import co.com.client.webproject.test.helpers.Seconds;
 import co.com.client.webproject.test.model.Customer;
 import co.com.client.webproject.test.page.CreateAnAccountPage;
 import co.com.sofka.test.actions.WebAction;
@@ -32,8 +33,8 @@ public class CreateAnAccountWebController {
                     2,
                     true
             );
-            webAction.click(createAnAccountPage.getCreateAnAccount(), 2, true);
-            webAction.click(createAnAccountPage.getMr(), 10, true);
+            webAction.click(createAnAccountPage.getCreateAnAccount(), Seconds.TWO_SECONDS.getValue(), true);
+            webAction.click(createAnAccountPage.getMr(), Seconds.TEN_SECONDS.getValue(), true);
             webAction.sendText(createAnAccountPage.getFirstName(), customer.getFirstName(), true);
             webAction.sendText(createAnAccountPage.getLastName(), customer.getLastName(), true);
             webAction.sendText(createAnAccountPage.getPassword(), customer.getPassword(), true);
