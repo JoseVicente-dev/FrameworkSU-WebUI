@@ -6,7 +6,6 @@ import co.com.client.webproject.test.controllers.LoginPageController;
 import co.com.client.webproject.test.controllers.MyAccountWebController;
 import co.com.client.webproject.test.controllers.openwebpage.StartBrowserWebController;
 import co.com.client.webproject.test.data.objects.TestInfo;
-import co.com.client.webproject.test.model.Customer;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
 import co.com.sofka.test.evidence.reports.Report;
@@ -20,7 +19,6 @@ import io.cucumber.java.es.Entonces;
 public class AdicionarUnProductoStepsDefinition extends Setup{
 
     private WebAction webAction;
-    private Customer customer;
 
     DressesPageController dressesPageController;
 
@@ -62,16 +60,15 @@ public class AdicionarUnProductoStepsDefinition extends Setup{
         dressesPageController.setWebAction(webAction);
         dressesPageController.adicionarUnProductoAlCarrito();
     }
-    @Entonces("el contador de productos aumentará en {int}")
-    public void elContadorDeProductosAumentaráEn(Integer cantidadDeProducto) {
+    @Entonces("se mostrará el mensaje {string}")
+    public void elContadorDeProductosAumentaráEn(String mensajeDeConfirmacion) {
 
-        String contador = dressesPageController.obtenerContadorDelCarrito();
-
+        String mensaje = dressesPageController.obtenerContadorDelCarrito();
 
         Assert
                 .Hard
-                .thatString(contador)
-                .isEqualTo(cantidadDeProducto);
+                .thatString(mensaje)
+                .isEqualTo(mensajeDeConfirmacion);
     }
 
     @After

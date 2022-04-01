@@ -9,9 +9,8 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         features = {"src/main/resources/features/carritoDeCompras.feature"},
         glue = {"co.com.client.webproject.test.stepdefinition"},
-        tags = "@ScenarioName:adicionarProductosAlCarrito",
+        tags = "@ScenarioName:eliminarProductosDelCarrito",
         publish = true
 )
-public class AdicionarUnProductoTestRunner {
-
+public class EliminarProductoTestRunner {
 }

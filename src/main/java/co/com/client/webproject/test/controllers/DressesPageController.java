@@ -21,9 +21,8 @@ public class DressesPageController {
 
             webAction.moveTo(dressesPage.getProductLabelText(),60,true);
             webAction.click(dressesPage.getProductLabelText(),60,true);
-            webAction.click(dressesPage.getAddToChart1Btn(),60,true);
-            webAction.moveTo(dressesPage.getContinueShoppingBtn(),60,true);
-            webAction.click(dressesPage.getContinueShoppingBtn(),60,true);
+            webAction.waitUntilExist(dressesPage.getAddToChartBtn(),60,true);
+            webAction.click(dressesPage.getAddToChartBtn(),60,true);
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrio un error al adicionar un producto "+e);
         }
@@ -31,16 +30,16 @@ public class DressesPageController {
 
     //For asserts
     public String obtenerContadorDelCarrito(){
-        String contador= Dictionary.EMPTY_STRING;
+        String mensaje= Dictionary.EMPTY_STRING;
         try {
             DressesPage dressesPage = new DressesPage((webAction.getDriver()));
-            webAction.getText(dressesPage.getShoppingCarCounter(),10,true);
+            mensaje = webAction.getText(dressesPage.getAddedProductMessage(),60,true).trim();
 
         }catch (WebActionsException e){
 
-            Report.reportFailure("Ocurrio un error intentando validar el contador del carrito "+e);
+            Report.reportFailure("Ocurrio un error intentando validar el mensaje de confirmacion "+e);
         }
 
-        return contador;
+        return mensaje;
     }
 }
