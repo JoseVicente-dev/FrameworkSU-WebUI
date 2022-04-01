@@ -1,7 +1,9 @@
 package co.com.client.webproject.test.helpers;
 
 
+import co.com.client.webproject.test.model.ContactUsMessage;
 import co.com.client.webproject.test.model.Customer;
+import co.com.client.webproject.test.page.ContactUsPage;
 import co.com.sofka.test.evidence.reports.Report;
 
 import com.github.javafaker.Faker;
@@ -73,5 +75,15 @@ public class Helper {
         customer.setState(STATE_BY_DEFAULT_FLORIDA);
 
         return customer;
+    }
+
+    public static ContactUsMessage createContactUsMessage(String subject, String email, String message){
+
+        ContactUsMessage contactUsMessage = new ContactUsMessage();
+        contactUsMessage.setMessage(message);
+        contactUsMessage.setEmail(email);
+        contactUsMessage.setSubject(subject);
+
+        return contactUsMessage;
     }
 }

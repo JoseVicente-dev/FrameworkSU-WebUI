@@ -12,6 +12,14 @@ public class LandingPage {
     @FindBy(css = ".login")
     WebElement signIn;
 
+    @CacheLookup
+    @FindBy(id = "contact-link")
+    WebElement contactUs;
+
+    public WebElement getContactUs() {
+        return contactUs;
+    }
+
     public WebElement getSignIn() {
         return signIn;
     }

@@ -23,4 +23,17 @@ public class LoginPageController {
             Report.reportFailure("Ocurrio un error al intentar abrir la tienda online", e);
         }
     }
+
+    public void irAContactUs(){
+
+        try{
+            LandingPage landingPage = new LandingPage(webAction.getDriver());
+
+            webAction.click(landingPage.getContactUs(), Seconds.TWO_SECONDS.getValue(), true);
+
+        } catch (WebActionsException e) {
+            Report.reportFailure("Ocurrio un error al intentar abrir la tienda online", e);
+        }
+
+    }
 }
