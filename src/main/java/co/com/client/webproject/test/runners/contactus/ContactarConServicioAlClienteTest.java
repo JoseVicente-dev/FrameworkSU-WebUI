@@ -1,4 +1,5 @@
-package co.com.client.webproject.test.runners;
+package co.com.client.webproject.test.runners.contactus;
+
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -9,7 +10,7 @@ import org.junit.runner.RunWith;
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         features = {"src/main/resources/features/contactUs.feature"},
         glue = {"co.com.client.webproject.test.stepdefinition"},
-        tags = "@ScenarioName:intentarEnviarPQRSSinMensaje",
+        tags = "@ScenarioName:contactarConServicioAlCliente",
         publish = true)
-public class IntentarEnviarPQRSSinMensajeTest {
+public class ContactarConServicioAlClienteTest {
 }

@@ -1,4 +1,4 @@
-package co.com.client.webproject.test.stepdefinition;
+package co.com.client.webproject.test.stepdefinition.contactus;
 
 import co.com.client.webproject.test.controllers.ContactUsPageController;
 import co.com.client.webproject.test.controllers.DressesPageController;
@@ -9,6 +9,7 @@ import co.com.client.webproject.test.helpers.ContactUsMessageKeys;
 import co.com.client.webproject.test.helpers.Dictionary;
 import co.com.client.webproject.test.helpers.Helper;
 import co.com.client.webproject.test.model.ContactUsMessage;
+import co.com.client.webproject.test.stepdefinition.Setup;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
 import co.com.sofka.test.evidence.reports.Report;
@@ -21,7 +22,7 @@ import io.cucumber.java.es.Entonces;
 
 import java.util.Map;
 
-public class IntentarEnviarPQRSSinMensajeStepsDefinition extends Setup{
+public class IntentarEnviarPQRSSinMensajeStepsDefinition extends Setup {
     private WebAction webAction;
     private ContactUsMessage contactUsMessage;
     private ContactUsPageController contactUsPageController;

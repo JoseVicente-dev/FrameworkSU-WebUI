@@ -1,4 +1,4 @@
-package co.com.client.webproject.test.stepdefinition;
+package co.com.client.webproject.test.stepdefinition.shoppingcart;
 
 import co.com.client.webproject.test.controllers.CreateAnAccountWebController;
 import co.com.client.webproject.test.controllers.DressesPageController;
@@ -6,6 +6,7 @@ import co.com.client.webproject.test.controllers.LoginPageController;
 import co.com.client.webproject.test.controllers.MyAccountWebController;
 import co.com.client.webproject.test.controllers.openwebpage.StartBrowserWebController;
 import co.com.client.webproject.test.data.objects.TestInfo;
+import co.com.client.webproject.test.stepdefinition.Setup;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
 import co.com.sofka.test.evidence.reports.Report;
@@ -16,7 +17,7 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 
-public class AdicionarUnProductoStepsDefinition extends Setup{
+public class AdicionarUnProductoStepsDefinition extends Setup {
 
     private WebAction webAction;
     DressesPageController dressesPageController;

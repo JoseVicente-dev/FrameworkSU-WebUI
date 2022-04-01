@@ -1,4 +1,4 @@
-package co.com.client.webproject.test.stepdefinition;
+package co.com.client.webproject.test.stepdefinition.contactus;
 
 import co.com.client.webproject.test.controllers.ContactUsPageController;
 import co.com.client.webproject.test.controllers.LoginPageController;
@@ -7,6 +7,7 @@ import co.com.client.webproject.test.data.objects.TestInfo;
 import co.com.client.webproject.test.helpers.ContactUsMessageKeys;
 import co.com.client.webproject.test.helpers.Helper;
 import co.com.client.webproject.test.model.ContactUsMessage;
+import co.com.client.webproject.test.stepdefinition.Setup;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
 import co.com.sofka.test.evidence.reports.Report;

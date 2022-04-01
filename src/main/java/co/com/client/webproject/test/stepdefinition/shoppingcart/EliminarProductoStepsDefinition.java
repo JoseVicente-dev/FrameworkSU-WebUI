@@ -1,8 +1,9 @@
-package co.com.client.webproject.test.stepdefinition;
+package co.com.client.webproject.test.stepdefinition.shoppingcart;
 
 import co.com.client.webproject.test.controllers.*;
 import co.com.client.webproject.test.controllers.openwebpage.StartBrowserWebController;
 import co.com.client.webproject.test.data.objects.TestInfo;
+import co.com.client.webproject.test.stepdefinition.Setup;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
 import co.com.sofka.test.evidence.reports.Report;
