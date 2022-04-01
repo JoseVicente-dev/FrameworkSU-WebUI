@@ -22,7 +22,9 @@ public class ContactUsPageController {
             ContactUsPage contactUsPage = new ContactUsPage(webAction.getDriver());
             webAction.selectByText(contactUsPage.getSubject(), contactUsMessage.getSubject(), true);
             webAction.sendText(contactUsPage.getEmail(), contactUsMessage.getEmail(), true);
+            if (contactUsMessage.getMessage()!=null){
             webAction.sendText(contactUsPage.getSubjectMessage(), contactUsMessage.getMessage(), true);
+            }
             webAction.click(contactUsPage.getSendBtn(), true);
         } catch (WebActionsException e) {
             Report.reportFailure("Ocurrió un error al intentar enviar el mensaje para servicio al cliente " + e);
