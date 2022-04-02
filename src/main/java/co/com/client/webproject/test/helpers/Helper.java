@@ -3,7 +3,6 @@ package co.com.client.webproject.test.helpers;
 
 import co.com.client.webproject.test.model.ContactUsMessage;
 import co.com.client.webproject.test.model.Customer;
-import co.com.client.webproject.test.page.ContactUsPage;
 import co.com.sofka.test.evidence.reports.Report;
 
 import com.github.javafaker.Faker;
