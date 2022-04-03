@@ -1,6 +1,8 @@
 package co.com.client.webproject.test.helpers;
 
 public class Dictionary {
+
+    public static final String WEBSITE_URL="http://automationpractice.com/index.php";
     public static final String STATE_BY_DEFAULT_FLORIDA = "Florida";
 
     public static final String EMPTY_STRING = "";
