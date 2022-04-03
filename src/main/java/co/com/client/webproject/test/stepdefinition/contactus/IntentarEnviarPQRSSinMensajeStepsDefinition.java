@@ -1,7 +1,6 @@
 package co.com.client.webproject.test.stepdefinition.contactus;
 
 import co.com.client.webproject.test.controllers.ContactUsPageController;
-import co.com.client.webproject.test.controllers.DressesPageController;
 import co.com.client.webproject.test.controllers.LoginPageController;
 import co.com.client.webproject.test.controllers.openwebpage.StartBrowserWebController;
 import co.com.client.webproject.test.data.objects.TestInfo;
@@ -22,6 +21,8 @@ import io.cucumber.java.es.Entonces;
 
 import java.util.Map;
 
+import static co.com.client.webproject.test.helpers.WritePropertiesFile.writeConfigurationProperties;
+
 public class IntentarEnviarPQRSSinMensajeStepsDefinition extends Setup {
     private WebAction webAction;
     private ContactUsMessage contactUsMessage;
@@ -29,6 +30,7 @@ public class IntentarEnviarPQRSSinMensajeStepsDefinition extends Setup {
 
     @Before
     public void setup(Scenario scenario){
+        writeConfigurationProperties(Dictionary.WEBSITE_URL);
         testInfo = new TestInfo(scenario);
         webAction = new WebAction(testInfo.getFeatureName());
         webAction.setScenario(testInfo.getScenarioName());

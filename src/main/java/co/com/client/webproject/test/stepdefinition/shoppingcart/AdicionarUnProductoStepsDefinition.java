@@ -6,6 +6,7 @@ import co.com.client.webproject.test.controllers.LoginPageController;
 import co.com.client.webproject.test.controllers.MyAccountWebController;
 import co.com.client.webproject.test.controllers.openwebpage.StartBrowserWebController;
 import co.com.client.webproject.test.data.objects.TestInfo;
+import co.com.client.webproject.test.helpers.Dictionary;
 import co.com.client.webproject.test.stepdefinition.Setup;
 import co.com.sofka.test.actions.WebAction;
 import co.com.sofka.test.evidence.reports.Assert;
@@ -17,6 +18,8 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 
+import static co.com.client.webproject.test.helpers.WritePropertiesFile.writeConfigurationProperties;
+
 public class AdicionarUnProductoStepsDefinition extends Setup {
 
     private WebAction webAction;
@@ -24,6 +27,7 @@ public class AdicionarUnProductoStepsDefinition extends Setup {
 
     @Before
     public void setup(Scenario scenario){
+        writeConfigurationProperties(Dictionary.WEBSITE_URL);
         testInfo = new TestInfo(scenario);
         webAction = new WebAction(testInfo.getFeatureName());
         webAction.setScenario(testInfo.getScenarioName());

@@ -8,6 +8,7 @@ public class Setup {
     protected TestInfo testInfo;
 
     public Browser browser(){
+
         Browser browserConfiguration = new Browser();
         browserConfiguration.setBrowser(Browser.Browsers.CHROME);
         browserConfiguration.setIncognito(true);
